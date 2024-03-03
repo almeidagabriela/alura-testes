@@ -9,21 +9,26 @@ namespace Alura.Estacionamento.Testes
         [Fact]
         public void TestaVeiculoAcelerar()
         {
+            // Arrange
             var veiculo = new Veiculo();
 
+            // Act
             veiculo.Acelerar(10);
 
-            // Valida o resultado esperado
+            // Assert: Valida o resultado esperado
             Assert.Equal(100, veiculo.VelocidadeAtual);
         }
 
         [Fact]
         public void TestaVeiculoFrear()
         {
+            // Arrange
             var veiculo = new Veiculo();
 
+            // Act
             veiculo.Frear(10);
 
+            // Assert
             Assert.Equal(-150, veiculo.VelocidadeAtual);
         }
     }
