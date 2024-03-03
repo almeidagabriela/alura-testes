@@ -77,5 +77,33 @@ namespace Alura.Estacionamento.Testes
             // Assert
             Assert.Equal(placa, consultado.Placa);
         }
+
+        [Fact]
+        public void AlterarDadosVeiculo()
+        {
+            // Arrange
+            var estacionamento = new Patio();
+            var veiculo = new Veiculo();
+            veiculo.Proprietario = "Gabriela Almeida";
+            veiculo.Tipo = TipoVeiculo.Automovel;
+            veiculo.Cor = "Amarelo";
+            veiculo.Modelo = "Fusca";
+            veiculo.Placa = "asd-9999";
+
+            estacionamento.RegistrarEntradaVeiculo(veiculo);
+
+            var veiculoAlterado = new Veiculo();
+            veiculoAlterado.Proprietario = "Gabriela Almeida";
+            veiculoAlterado.Tipo = TipoVeiculo.Automovel;
+            veiculoAlterado.Cor = "Preto"; // Alteração
+            veiculoAlterado.Modelo = "Fusca";
+            veiculoAlterado.Placa = "asd-9999";
+
+            // Act
+            var alterado = estacionamento.AlterarDadosVeiculo(veiculoAlterado);
+
+            // Assert
+            Assert.Equal(alterado.Cor, veiculoAlterado.Cor);
+        }
     }
 }
