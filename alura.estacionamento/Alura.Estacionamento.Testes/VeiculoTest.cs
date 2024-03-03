@@ -7,6 +7,7 @@ namespace Alura.Estacionamento.Testes
     public class VeiculoTest
     {
         [Fact (DisplayName = "Método Acelerar")]
+        [Trait("Funcionalidade", "Acelerar")]
         public void TestaVeiculoAcelerar()
         {
             // Arrange
@@ -20,6 +21,7 @@ namespace Alura.Estacionamento.Testes
         }
 
         [Fact(DisplayName = "Método Frear")]
+        [Trait("Funcionalidade", "Frear")]
         public void TestaVeiculoFrear()
         {
             // Arrange
