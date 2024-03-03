@@ -7,12 +7,16 @@ namespace Alura.Estacionamento.Testes
 {
     public class VeiculoTest
     {
+        private Veiculo veiculo;
+
+        public VeiculoTest() 
+        { 
+            veiculo = new Veiculo();
+        }
+
         [Fact]
         public void TestaVeiculoAcelerarComParametro10()
         {
-            // Arrange
-            var veiculo = new Veiculo();
-
             // Act
             veiculo.Acelerar(10);
 
@@ -23,9 +27,6 @@ namespace Alura.Estacionamento.Testes
         [Fact]
         public void TestaVeiculoFrearComParametro10()
         {
-            // Arrange
-            var veiculo = new Veiculo();
-
             // Act
             veiculo.Frear(10);
 
@@ -43,7 +44,6 @@ namespace Alura.Estacionamento.Testes
         public void FichaDeInformacaoDoVeiculo()
         {
             // Arrange
-            var veiculo = new Veiculo();
             veiculo.Proprietario = "Gabriela Almeida";
             veiculo.Tipo = TipoVeiculo.Automovel;
             veiculo.Cor = "Amarelo";
