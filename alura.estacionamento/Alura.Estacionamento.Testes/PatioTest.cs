@@ -6,17 +6,27 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Xunit;
+using Xunit.Abstractions;
 
 namespace Alura.Estacionamento.Testes
 {
-    public class PatioTest
+    public class PatioTest : IDisposable
     {
+        private Veiculo veiculo;
+        public ITestOutputHelper SaidaConsoleTeste;
+
+        public PatioTest(ITestOutputHelper _saidaConsoleTeste)
+        {
+            SaidaConsoleTeste = _saidaConsoleTeste;
+            SaidaConsoleTeste.WriteLine("Construtor invocado.");
+            veiculo = new Veiculo();
+        }
+
         [Fact]
         public void ValidaFaturamentoDoEstacionamentoComUmVeiculo()
         {
             // Arrange
             var estacionamento = new Patio();
-            var veiculo = new Veiculo();
             veiculo.Proprietario = "Gabriela Almeida";
             veiculo.Tipo = TipoVeiculo.Automovel;
             veiculo.Cor = "Amarelo";
@@ -41,7 +51,6 @@ namespace Alura.Estacionamento.Testes
         {
             // Arrange
             var estacionamento = new Patio();
-            var veiculo = new Veiculo();
             veiculo.Proprietario = proprietario;
             veiculo.Placa = placa;
             veiculo.Cor = cor;
@@ -63,7 +72,6 @@ namespace Alura.Estacionamento.Testes
         {
             // Arrange
             var estacionamento = new Patio();
-            var veiculo = new Veiculo();
             veiculo.Proprietario = proprietario;
             veiculo.Placa = placa;
             veiculo.Cor = cor;
@@ -83,7 +91,6 @@ namespace Alura.Estacionamento.Testes
         {
             // Arrange
             var estacionamento = new Patio();
-            var veiculo = new Veiculo();
             veiculo.Proprietario = "Gabriela Almeida";
             veiculo.Tipo = TipoVeiculo.Automovel;
             veiculo.Cor = "Amarelo";
@@ -104,6 +111,11 @@ namespace Alura.Estacionamento.Testes
 
             // Assert
             Assert.Equal(alterado.Cor, veiculoAlterado.Cor);
+        }
+
+        public void Dispose()
+        {
+            SaidaConsoleTeste.WriteLine("Dispose invocado.");
         }
     }
 }

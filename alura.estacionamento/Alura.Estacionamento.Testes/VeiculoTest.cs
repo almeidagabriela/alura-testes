@@ -2,15 +2,19 @@ using Alura.Estacionamento.Alura.Estacionamento.Modelos;
 using Alura.Estacionamento.Modelos;
 using System;
 using Xunit;
+using Xunit.Abstractions;
 
 namespace Alura.Estacionamento.Testes
 {
-    public class VeiculoTest
+    public class VeiculoTest : IDisposable
     {
         private Veiculo veiculo;
+        public ITestOutputHelper SaidaConsoleTeste;
 
-        public VeiculoTest() 
-        { 
+        public VeiculoTest(ITestOutputHelper _saidaConsoleTeste) 
+        {
+            SaidaConsoleTeste = _saidaConsoleTeste;
+            SaidaConsoleTeste.WriteLine("Construtor invocado.");
             veiculo = new Veiculo();
         }
 
@@ -55,6 +59,11 @@ namespace Alura.Estacionamento.Testes
 
             // Assert
             Assert.Contains("Ficha do Veículo:", dados);
+        }
+
+        public void Dispose()
+        {
+            SaidaConsoleTeste.WriteLine("Dispose invocado.");
         }
     }
 }
