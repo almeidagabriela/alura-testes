@@ -68,7 +68,7 @@ namespace Alura.Estacionamento.Testes
 
         [Theory]
         [InlineData("Gabriel Almeida", "ASD-1498", "Preto", "Gol")]
-        public void LocalizaVeiculoNoPatioComBaseNaPlaca(string proprietario, string placa, string cor, string modelo)
+        public void LocalizaVeiculoNoPatioComBaseNoIdTicket(string proprietario, string placa, string cor, string modelo)
         {
             // Arrange
             var estacionamento = new Patio();
@@ -80,10 +80,10 @@ namespace Alura.Estacionamento.Testes
             estacionamento.RegistrarEntradaVeiculo(veiculo);
 
             // Act
-            var consultado = estacionamento.PesquisaVeiculo(placa);
+            var consultado = estacionamento.PesquisaVeiculo(veiculo.IdTicket);
 
             // Assert
-            Assert.Equal(placa, consultado.Placa);
+            Assert.Contains("### Ticket Estacionamento Alura ###", consultado.Ticket);
         }
 
         [Fact]
