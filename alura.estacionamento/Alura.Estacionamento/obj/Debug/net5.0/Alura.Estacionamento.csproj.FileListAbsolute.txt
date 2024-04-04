@@ -52,7 +52,6 @@ C:\git\alura-testes\alura.estacionamento\Alura.Estacionamento\bin\Debug\net5.0\A
 C:\git\alura-testes\alura.estacionamento\Alura.Estacionamento\bin\Debug\net5.0\Alura.Estacionamento.runtimeconfig.dev.json
 C:\git\alura-testes\alura.estacionamento\Alura.Estacionamento\bin\Debug\net5.0\Alura.Estacionamento.dll
 C:\git\alura-testes\alura.estacionamento\Alura.Estacionamento\bin\Debug\net5.0\Alura.Estacionamento.pdb
-C:\git\alura-testes\alura.estacionamento\Alura.Estacionamento\obj\Debug\net5.0\Alura.Estacionamento.csproj.AssemblyReference.cache
 C:\git\alura-testes\alura.estacionamento\Alura.Estacionamento\obj\Debug\net5.0\Alura.Estacionamento.GeneratedMSBuildEditorConfig.editorconfig
 C:\git\alura-testes\alura.estacionamento\Alura.Estacionamento\obj\Debug\net5.0\Alura.Estacionamento.AssemblyInfoInputs.cache
 C:\git\alura-testes\alura.estacionamento\Alura.Estacionamento\obj\Debug\net5.0\Alura.Estacionamento.AssemblyInfo.cs
